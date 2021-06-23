@@ -9,19 +9,28 @@ print([i for i, x in enumerate(a) if x in target])'''
 
 import heapq
 
-a = [(9, 100),(4, 200),(8, 300),(2, 400),(4, 100),(1, 600)]
-h = []
+a = [1,9,5,4,3]
+sorted_list = []
 
-for x in a :
-    heapq.heappush(h, x)
+heapq.heapify(a)
+
+while a :
+    sorted_list.append(heapq.heappop(a))
+
+print(sorted_list)
+
+
+'''h = []
+heapq.heappush(h, 9)
+heapq.heappush(h, 4)
+heapq.heappush(h, 5)
+heapq.heappush(h, 3)
+heapq.heappush(h, 1)
 
 print(h)
-heapq.heapify(a)
-print(a)
 
-
-for _ in range(len(h)) :
-    print(heapq.heappop(h))
-
-if float('inf') :
-    print(float('inf'))
+print(heapq.heappop(h), h)
+print(heapq.heappop(h), h)
+print(heapq.heappop(h), h)
+print(heapq.heappop(h), h)
+print(heapq.heappop(h), h)'''
