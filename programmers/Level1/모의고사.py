@@ -1,3 +1,9 @@
+#
+# Level1. 모의고사
+# https://programmers.co.kr/learn/courses/30/lessons/42840
+# Category. 완전탐색
+#
+
 def solution(answers):
     num = len(answers)
     supo1 = [1, 2, 3, 4, 5] * (num // 5 + 1)
