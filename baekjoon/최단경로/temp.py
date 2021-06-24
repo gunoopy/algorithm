@@ -1,36 +1,23 @@
 import sys
 from collections import deque
-'''
-a = [100, 200, 300, 100, 200, 300, 100, 200, 300]
-target = [100, 300]
-
-print(list(filter(lambda x : a[x] in target, range(len(a)))))
-print([i for i, x in enumerate(a) if x in target])'''
-
-import heapq
-
-a = [1,9,5,4,3]
-sorted_list = []
-
-heapq.heapify(a)
-
-while a :
-    sorted_list.append(heapq.heappop(a))
-
-print(sorted_list)
 
 
-'''h = []
-heapq.heappush(h, 9)
-heapq.heappush(h, 4)
-heapq.heappush(h, 5)
-heapq.heappush(h, 3)
-heapq.heappush(h, 1)
+# N = 5
+# stages = [2, 1, 2, 6, 2, 4, 3, 3]
+N = 4
+stages = [4,4,4,4,4]
 
-print(h)
+current = len(stages)
+fail = [0] * (N+1)
+answer = []
 
-print(heapq.heappop(h), h)
-print(heapq.heappop(h), h)
-print(heapq.heappop(h), h)
-print(heapq.heappop(h), h)
-print(heapq.heappop(h), h)'''
+for i in range(1, N+1) :
+    cnt = stages.count(i)
+    fail[i] = cnt / current
+    current -= cnt
+    if current == 0 : break
+
+for idx, _ in sorted(enumerate(fail[1:]), key = lambda x : x[1], reverse = True) :
+    answer.append(idx+1)
+
+print(answer)
