@@ -1,3 +1,9 @@
+#
+# Level1. 실패율
+# https://programmers.co.kr/learn/courses/30/lessons/42889
+# 2019 KAKAO BLIND RECRUITMENT
+#
+
 def solution(N, stages):
     answer = []
     current = len(stages) # 현재 스테이지까지 도달한 사용자 수
