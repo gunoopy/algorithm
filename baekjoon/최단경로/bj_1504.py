@@ -32,7 +32,7 @@ def Dijkstra(start) :
 
 
 #
-# Main (Test)
+# Main
 #
 
 V, E = map(int, sys.stdin.readline().split())
