@@ -5,9 +5,20 @@
 #
 
 def solution(gems):
+    visited = []
+    start = 0
+    end = len(gems) - 1
+
+    for i, gem in enumerate(gems) :
+        if gem not in visited :
+            visited.append(gem)
+            end = i
 
 
-    answer = []
+
+    [1, 2, 2, 1, 1, 3, 4, 1]
+
+    answer = [start+1, end+1]
     return answer
 
 
