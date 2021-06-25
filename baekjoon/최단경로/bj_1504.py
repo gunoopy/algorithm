@@ -14,11 +14,10 @@ def Dijkstra(start) :
     global G
     costs = [float('inf')] * (V + 1)
     costs[start] = 0
-    heap = [(0, start)]
+    heap = [(0, start)] # (distance, vertex)
 
 
     while heap :
-        print(costs)
         dist, vertex = heapq.heappop(heap)
 
         if dist > costs[vertex] : continue
@@ -29,11 +28,7 @@ def Dijkstra(start) :
                 costs[v] = new_dist
                 heapq.heappush(heap, (new_dist, v))
 
-    print()
     return costs
-
-
-
 
 
 #
