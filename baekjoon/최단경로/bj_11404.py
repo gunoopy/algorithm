@@ -1,7 +1,7 @@
 #
 # 11404. 플로이드
 # https://www.acmicpc.net/problem/11404
-# Floyd Warshall - All-Source Shortest Path
+# Floyd Warshall - All-Pairs Shortest Path
 # O(V^3)
 #
 
