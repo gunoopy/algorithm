@@ -5,6 +5,7 @@
 
 import sys
 INF = float('inf')
+
 #
 # Functions
 #
@@ -13,7 +14,14 @@ def BellmanFord(G, V, start) :
     dists = [INF] * (V+1)
     dists[start] = 0
 
+    for i in range(V+1) : # V 번 확인
+        for node in range(1, V+1) :
+            for neighbor, d in G[node] :
+                if dists[node] + d < dists[neighbor] :
+                    dists[neighbor] = dists[node] + d
+                    if i == V : return False # V 번째에서도 바뀐다면 음수 사이클 존재
 
+    return dists
 
 #
 # Main
@@ -27,3 +35,8 @@ for _ in range(E) :
     G[v1].append((v2, d))
 
 dists = BellmanFord(G, V, 1)
+
+if dists :
+    for x in dists[2:] :
+        print(x if x != INF else -1)
+else : print(-1)
