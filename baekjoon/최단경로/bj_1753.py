@@ -1,8 +1,8 @@
 #
 # 1753. 최단경로
 # https://www.acmicpc.net/problem/1753
-# Dijkstra`s Single-Source Shortest Path Algorithm
-# Using Min Heap
+# Dijkstra - Single-Source Shortest Path
+# O(ElogE)
 #
 
 import sys
